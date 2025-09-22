@@ -1,0 +1,151 @@
+/* ==========================================================================
+   Technozen CSS Framework v0.1
+   The Definitive Guide to Comfortable Practicality
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. Imports & Variables (The Core Voice & Materials)
+   -------------------------------------------------------------------------- */
+
+/* Guideline: Chapter 1 - Embrace BIZ UDPGothic as The Voice */
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
+
+:root {
+  /* Guideline: Chapter 2 & 4 - Colors */
+  --tz-shell-bg: #F8F9FA;
+  --tz-window-bg-start: #FFFFFF;
+  --tz-window-bg-end: #E8EBEF; 
+  --tz-border-color: #DDE1E6;
+  --tz-text-color: #212529; /* Charcoal */
+  --tz-system-blue: #0068B7;
+  --tz-system-blue-text: #FFFFFF;
+
+  /* Guideline: Chapter 3 - Texture */
+  --tz-border-radius: 6px;
+  --tz-base-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --tz-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  --tz-active-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+  
+  /* Guideline: Chapter 4 - Interaction */
+  --tz-transition-speed: 120ms;
+  --tz-transition-timing: ease;
+}
+
+/* --------------------------------------------------------------------------
+   1. Base Styles (The Philosophy)
+   -------------------------------------------------------------------------- */
+
+body {
+  margin: 0;
+  font-family: 'BIZ UDPGothic', sans-serif;
+  background-color: var(--tz-shell-bg);
+  color: var(--tz-text-color);
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   2. Architecture (The Structural Principles)
+   -------------------------------------------------------------------------- */
+
+/* Guideline: Chapter 2 - The Shell */
+.technozen-shell {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+/* Guideline: Chapter 2 - The Window */
+.technozen-window {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--tz-border-color);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. Components (The Material Doctrine & Interaction)
+   -------------------------------------------------------------------------- */
+
+/* The base style for all interactive components, defining the "plastic" texture */
+.technozen-button,
+.technozen-card,
+.technozen-input {
+  /* Guideline: Chapter 3 - High-Quality Plastic Texture */
+  background: linear-gradient(to bottom, hsl(210, 20%, 99%), hsl(210, 20%, 92%));
+  border: 1px solid #B8BCC2;
+  border-top-color: #D6D9DE;
+  border-radius: var(--tz-border-radius);
+  box-sizing: border-box;
+  font-family: inherit; /* Ensure font consistency */
+  color: var(--tz-text-color);
+}
+
+/* --- Card Component --- */
+.technozen-card {
+  padding: 16px;
+}
+
+/* --- Button Component --- */
+.technozen-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  user-select: none;
+  text-decoration: none;
+  display: inline-block; /* For proper rendering of padding and margins */
+
+  /* Guideline: Chapter 4 - Implement Physical Feedback */
+  transition: background var(--tz-transition-speed) var(--tz-transition-timing), 
+              box-shadow var(--tz-transition-speed) var(--tz-transition-timing);
+}
+
+.technozen-button:hover {
+  background: linear-gradient(to bottom, hsl(210, 20%, 100%), hsl(210, 20%, 94%));
+  box-shadow: var(--tz-hover-shadow);
+}
+
+.technozen-button:active {
+  background: linear-gradient(to top, hsl(210, 20%, 99%), hsl(210, 20%, 92%));
+  box-shadow: var(--tz-active-shadow);
+  transition-duration: 0ms;
+}
+
+/* Button Modifier - System Blue */
+.technozen-button.system-blue {
+  background: var(--tz-system-blue); /* #0068B7 */
+  border-color: #005a9e; /* 5%暗い青 */
+  color: var(--tz-system-blue-text);
+  box-shadow: 0 2px 5px rgba(0, 104, 183, 0.2);
+}
+
+.technozen-button.system-blue:hover {
+  background: #0076ce; /* 5%明るい青 */
+  box-shadow: 0 4px 8px rgba(0, 104, 183, 0.25);
+}
+
+.technozen-button.system-blue:active {
+  background: #005a9e; /* 5%暗い青 */
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* --- Form Input Component --- */
+.technozen-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.technozen-input:focus {
+  outline: none;
+  border-color: var(--tz-system-blue);
+  box-shadow: 0 0 0 3px rgba(0, 104, 183, 0.15);
+}

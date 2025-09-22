@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technozen UI Framework Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Demo-specific styles */
+    .header { border-bottom: 1px solid var(--tz-border-color); padding-bottom: 16px; margin-bottom: 16px; }
+    h1, p { margin: 0; }
+    h1 { margin-bottom: 4px; font-size: 20px; }
+    p { font-size: 14px; color: #6c757d; }
+    .component-group { margin-top: 24px; }
+    .component-group h2 { font-size: 16px; margin-bottom: 12px; }
+    .button-container { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .form-group { margin-top: 16px; }
+    .form-group label { display: block; font-size: 13px; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- Guideline: Chapter 2 - The Shell -->
+  <div class="technozen-shell">
+
+    <!-- Guideline: Chapter 2 - The Window -->
+    <div class="technozen-window">
+
+      <header class="header">
+        <h1>Technozenコントロールパネル</h1>
+        <p>心地よい実用性の追求</p>
+      </header>
+
+      <main>
+        <div class="component-group">
+          <h2>カード (Card)</h2>
+          <div class="technozen-card">
+            これは、UI部品を内包するための基本的な「カード」コンポーネントです。ガイドラインで規定された「高品質な白いプラスチック」の質感を体現しています。
+          </div>
+        </div>
+
+        <div class="component-group">
+          <h2>ボタン (Button)</h2>
+          <div class="button-container">
+            <button class="technozen-button">標準ボタン</button>
+            <button class="technozen-button system-blue">実行</button>
+            <a href="#" class="technozen-button">リンクボタン</a>
+          </div>
+          <p style="margin-top: 8px; font-size: 13px;">ホバーすると「浮き上がり」、クリックすると「押し込まれる」物理的な手触りを再現しています。</p>
+        </div>
+
+        <div class="component-group">
+          <h2>フォーム (Form)</h2>
+          <div class="technozen-card">
+            <div class="form-group">
+              <label for="username">ユーザーID</label>
+              <input type="text" id="username" class="technozen-input" placeholder="IDを入力...">
+            </div>
+            <div class="form-group">
+              <label for="password">パスワード</label>
+              <input type="password" id="password" class="technozen-input" placeholder="********">
+            </div>
+            <div class="button-container" style="margin-top: 20px;">
+                <button class="technozen-button system-blue">ログイン</button>
+                <button class="technozen-button">キャンセル</button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+</body>
+</html>
